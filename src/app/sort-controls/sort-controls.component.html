@@ -1,0 +1,21 @@
+<div class="type">
+    <h3>Type:</h3>
+    
+    <select name="type" id="type" #type (change)="typeChanged(type.value)">
+        <option value="tv">TVs</option>
+        <option value="appliance">Appliances</option>
+        <option value="phone">Phones</option>
+        <option value="game">Video Games</option>
+        <option value="all" [selected]="true">All</option>
+    </select>
+</div>
+
+<div class="prices">
+    <h3>Price:</h3>
+
+    <div *ngFor="let price of checkboxPrices; let i = index">
+        <input type="checkbox" [value]="price.value[0] + '-' + price.value[1]" (change)="checkPrice(i)" [checked]="price.checked">
+        <label for="prices3">{{price.text}}</label><br>
+    </div>
+</div>
+

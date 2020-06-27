@@ -1,0 +1,8 @@
+<img [src]="product.image" alt="Image" class="product_image">
+<p class="name">{{ product.name }}</p>
+<p class="price">${{ product.price }}</p>
+<div class="rating">
+    <span *ngFor="let star of stars; let i = index" class="fa fa-star" [ngClass]="{'checked' : getTrueOrFalseClass(product.rating, i)}"></span>
+</div>
+
+

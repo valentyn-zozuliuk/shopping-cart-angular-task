@@ -1,0 +1,77 @@
+@import "~src/styles";
+
+:host {
+    position: relative;
+    float: left;
+    height: 270px;
+    width: 26.6%;
+    min-width: 150px;
+    margin-left: 5%;
+    margin-top: 5%;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba($secondary-color,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba($secondary-color,0.75);
+    box-shadow: 0px 0px 10px 0px rgba($secondary-color,0.75);
+    text-align: center;
+    cursor: pointer;
+}
+
+.product_image {
+    height: auto;
+    width: 100%;
+}
+
+.name {
+    font-size: 17px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.price {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    padding: 4px;
+    border-radius: 5px;
+    color: white;
+    background-color: $primary-color;
+}
+
+.rating {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.checked {
+    color: orange;
+}
+
+@media screen and (max-width: 840px) {
+    :host {
+        height: 270px;
+    }
+}
+
+@media screen and (max-width: 755px) {
+    :host {
+        width: 42.5%;
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    :host {
+        width: 90%;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    :host {
+        height: 370px;
+    }
+}

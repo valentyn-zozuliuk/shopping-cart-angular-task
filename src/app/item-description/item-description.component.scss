@@ -1,0 +1,43 @@
+@import "~src/styles";
+
+.review {
+    margin-top: 25px;
+    border-bottom: 2px solid $primary-color;
+
+}
+
+.review::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.user_avatar {
+    border: 2px solid $primary-color;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.avatar_wrapper {
+    float: left;
+    height: auto;
+    width: 50px;
+    text-align: center;
+}
+
+.user_message {
+    float: left;
+    display: block;
+    width: calc(100% - 50px);
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 45px;
+}
+
+.buttons button{
+    margin-left: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}

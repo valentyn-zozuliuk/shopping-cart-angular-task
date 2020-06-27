@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <span class="header-text-intro" routerLink="/">Search the items</span> 
+    <div *ngIf="onProductsPage" class="searchbox">
+        <input type="text" [(ngModel)]="searchInput">
+    </div>
+    <i *ngIf="onProductsPage" class="material-icons icon" (click)="search()">search</i>
+    <div class="cart">
+        <i class="material-icons cart-icon" routerLink="/shopping-cart">shopping_cart</i>
+    </div>
+    <div *ngIf="numberOfProducts" class="number-of-items">{{ numberOfProducts }}</div>
+</div>

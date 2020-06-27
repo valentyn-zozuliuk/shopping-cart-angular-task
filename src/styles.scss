@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+//main style colors
+$primary-color: #7AB800;
+$secondary-color: #443135;
+
+$overall-padding: 180px;
+$overall-padding-small: 20px;
+
+//general setup
+
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html {
+    color: $secondary-color;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

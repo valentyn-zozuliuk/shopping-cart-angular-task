@@ -1,0 +1,33 @@
+@import "~src/styles";
+
+
+:host {
+    width: 80%;
+    float: left;
+    border-left: 3px solid $primary-color;
+    padding-bottom: 30px;
+}
+
+.search-results {
+    height: 30rem;
+    overflow: scroll;
+}
+
+.list::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 40px;
+}
+
+.not-found{
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media screen and (max-width: 840px) {
+    :host {
+        width: 100%;
+        border-left: none;
+    }
+}

@@ -1,0 +1,7 @@
+
+<div class="list" >
+    <app-single-item (click)="singleProductClicked(product)" [product]="product" *ngFor="let product of products | paginate: { itemsPerPage: 9, currentPage: p }"></app-single-item>
+</div>
+<pagination-controls *ngIf="products.length !== 0" class="pagination" (pageChange)="p = $event"></pagination-controls>
+
+<h2 class="not-found" *ngIf="products.length === 0">No items found!</h2>

@@ -1,0 +1,18 @@
+<ul class="cart-list">
+
+    <li *ngFor="let product of productList; let i = index" class="single-item" (click)="deleteItem(product.id, i)">
+        <div class="img-wrapper">
+            <img [src]="product.image" alt="text">
+        </div>
+
+        <div class="description-item">
+            <h3>{{ product.name }}</h3>
+            <p class="price">${{ product.price }}</p>
+            <div class="rating">
+                <span *ngFor="let star of stars; let i = index" class="fa fa-star" [ngClass]="{'checked' : getTrueOrFalseClass(product.rating, i)}"></span>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<h2 class="not-found" *ngIf="productList.length === 0">Your shopping cart is empty!</h2>
