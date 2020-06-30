@@ -1,7 +1,7 @@
 <div class="wrapper">
     <span class="header-text-intro" routerLink="/">Search the items</span> 
     <div *ngIf="onProductsPage" class="searchbox">
-        <input type="text" [(ngModel)]="searchInput">
+        <input type="text" [(ngModel)]="searchInput" (keyup.enter)="search()" placeholder="Search by product name">
     </div>
     <i *ngIf="onProductsPage" class="material-icons icon" (click)="search()">search</i>
     <div class="cart">

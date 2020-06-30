@@ -8,7 +8,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { StoreModule } from '@ngrx/store'; 
+import { StoreModule } from '@ngrx/store';
 import { ShoppingReducer } from './store/reducers/shopping.reducer';
 
 import { AppComponent } from './app.component';
@@ -19,32 +19,35 @@ import { SortControlsComponent } from './sort-controls/sort-controls.component';
 import { ListComponent } from './list/list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductsComponent } from './products/products.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    SingleItemComponent,
-    ItemDescriptionComponent,
-    SortControlsComponent,
-    ListComponent,
-    ShoppingCartComponent,
-    ProductsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    NgxPaginationModule,
-    NoopAnimationsModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    StoreModule.forRoot({
-      shopping: ShoppingReducer
-    })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        SingleItemComponent,
+        ItemDescriptionComponent,
+        SortControlsComponent,
+        ListComponent,
+        ShoppingCartComponent,
+        ProductsComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        NgxPaginationModule,
+        NoopAnimationsModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        StoreModule.forRoot({
+            shopping: ShoppingReducer
+        }),
+        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

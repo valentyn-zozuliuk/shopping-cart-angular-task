@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProductsHandlerService } from '../services/products-handler.service';
 
 import { Store } from '@ngrx/store';
@@ -10,23 +10,23 @@ import { Product } from '../services/products-handler.service';
 
 
 @Component({
-  selector: 'app-item-description',
-  templateUrl: './item-description.component.html',
-  styleUrls: ['./item-description.component.scss']
+    selector: 'app-item-description',
+    templateUrl: './item-description.component.html',
+    styleUrls: ['./item-description.component.scss']
 })
 export class ItemDescriptionComponent implements OnInit {
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA)  public data: Product,
-                              public productHandler: ProductsHandlerService, 
-                              public store: Store) { }
+    constructor(
+        @Inject(MAT_DIALOG_DATA) public data: Product,
+        public productHandler: ProductsHandlerService,
+        public store: Store) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  addToCart(): void {
-    this.store.dispatch(new AddItemAction(this.data))
-    this.productHandler.productAddedToCart.next();
-  }
+    addToCart(): void {
+        this.store.dispatch(new AddItemAction(this.data))
+        this.productHandler.productAddedToCart.next();
+    }
 
 }
